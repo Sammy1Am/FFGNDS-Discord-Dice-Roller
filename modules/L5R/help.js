@@ -34,6 +34,7 @@ const help = (topic, message, prefix) => {
 				.addField(`${prefix}swrpg`, 'Uses swrpg dice for this channel.')
 				.addField(`${prefix}genesys`, 'Uses genesys dice for this channel.')
 				.addField(`${prefix}l5r`, 'Uses l5r dice in this channel.')
+				.addField(`${prefix}swia`, 'Uses swia dice for this channel.')
 				.addField(`${prefix}poly`, 'Rolls any combination of polyhedral dice.')
 				.addField(`${prefix}ver`, 'Displays bot version.')
 				.addField(`${prefix}prefix`, 'Changes the prefix to activate the bot (role needs to be higher than the bot).')

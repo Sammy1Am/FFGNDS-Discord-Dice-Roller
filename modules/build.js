@@ -7,6 +7,16 @@ const l5rDice = [
     'success', 'opportunity', 'explosiveSuccess', 'strife', 'whiteHex',
     'blackgif', 'whitegif'
 ];
+const swiaDice = [
+    'yellowhss', 'yellows', 'yellowsxx', 'yellowhxx', 'yellowhsx', 'yellowhhx',
+    'greenhhx', 'greenhsx', 'greensx', 'greenhsxx', 'greenhhxx', 'greenhhxxx',
+    'bluesxx', 'bluehxx', 'bluehsxxx', 'bluehhxxx', 'bluehhxxxx', 'bluehxxxxx',
+    'redh', 'redhhs', 'redhh', 'redhh', 'redhhh', 'redhhh',
+    'blacke', 'blackb', 'blackb', 'blackbb', 'blackbb', 'blackbbb',
+    'whitez', 'whitee', 'whiteb', 'whiteeb', 'whiteeb', 'whited',
+    'hit', 'surge', 'evade', 'block', 'dodge', 'distance',
+    'yellowgif','greengif','bluegif','redgif','blackgif','whitegif'
+];
 const dice = [
     'yellow',
     'yellows',
@@ -73,13 +83,15 @@ const build = async (client) => {
     const genesysPatreon = await getEmoji('genesysPatreon', client, dice);
     const l5r = await getEmoji('l5r', client, l5rDice);
     const l5rPatreon = await getEmoji('l5rPatreon', client, l5rDice);
+    const swia = await getEmoji('swia', client, swiaDice);
     fs.writeFile(`./emoji.json`, JSON.stringify({
         swrpg,
         swrpgPatreon,
         genesys,
         genesysPatreon,
         l5r,
-        l5rPatreon
+        l5rPatreon,
+        swia
     }), () => console.log('The file has been saved!'));
 };
 

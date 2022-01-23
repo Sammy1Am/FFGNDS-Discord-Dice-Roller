@@ -8,6 +8,7 @@ const modules = require('./modules/');
 const main = require('./index');
 const swCommands = require('./modules/SW.GENESYS/').commands;
 const l5rCommands = require('./modules/L5R/').commands;
+const swiaCommands = require('./modules/SW.IA/').commands;
 
 //Called whenever a users send a message to the server
 const onMessage = async ({ message, client }) => {
@@ -83,6 +84,7 @@ const onMessage = async ({ message, client }) => {
         case 'swrpg':
         case 'genesys':
         case 'l5r':
+        case 'swia':
             writeData(client, message, 'channelEmoji', command);
             await main.sendMessage({
                 message, text: `${client.user.username} will now use ${command} dice`
@@ -114,6 +116,9 @@ const onMessage = async ({ message, client }) => {
         case 'l5r':
         case 'l5rPatreon':
             await l5rCommands({ client, message, params, command, desc, channelEmoji, prefix });
+            break;
+        case 'swia':
+            await swiaCommands({ client, message, params, command, desc, channelEmoji, prefix });
             break;
         default:
             break;
