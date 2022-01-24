@@ -12,26 +12,6 @@ async function commands({ client, message, params, command, desc, channelEmoji, 
         case 'h':
             functions.help({ client, message, params, prefix });
             break;
-        case 'gleepglop':
-        case 'species':
-            functions.gleepglop({ client, message, channelEmoji });
-            break;
-        case 'critical':
-        case 'crit':
-            functions.crit({ message, params, channelEmoji });
-            break;
-        //!shipcrit command
-        case 'shipcritical':
-        case 'shipcrit':
-            functions.shipcrit({ message, params, channelEmoji });
-            break;
-        //Destiny Point Module
-        case 'destiny':
-        case 'd':
-        case 'story':
-        case 's':
-            await functions.destiny({ client, message, params, channelEmoji });
-            break;
         // Roll the dice command
         case 'roll':
         case 'r':
@@ -40,18 +20,6 @@ async function commands({ client, message, params, command, desc, channelEmoji, 
         case 'reroll':
         case 'rr':
             await functions.reroll({ client, message, params, channelEmoji });
-            break;
-        case 'initiative':
-        case 'init':
-        case 'i':
-            await functions.initiative({ client, message, params, channelEmoji });
-            break;
-        case 'obligation':
-        case 'o':
-            await functions.trigger({ client, message, type: 'obligation' });
-            break;
-        case 'duty':
-            await functions.trigger({ client, message, type: 'duty' });
             break;
     }
 }
