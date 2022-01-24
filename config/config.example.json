@@ -1,0 +1,22 @@
+{
+    "apiKey": "",
+    "authDomain": "",
+    "databaseURL": "",
+    "projectId": "",
+    "storageBucket": "",
+    "messagingSenderId": "",
+
+    "token": "<discordBotToken>",
+    "adminID": "<yourDiscordUserId>",
+    "prefix": "!",
+    "maxRollsPerDie": 1000,
+    "descriptorPrepend": "",
+    "dm": "",
+    "swrpg": "<yourDiscordServerId>",
+    "genesys": "<yourDiscordServerId>",
+    "l5r": "<yourDiscordServerId>",
+    "swia":"<yourDiscordServerId>",
+    "Patreon":{
+        "guild":""
+    }
+}
