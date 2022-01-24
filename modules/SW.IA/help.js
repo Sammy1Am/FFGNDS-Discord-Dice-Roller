@@ -5,28 +5,6 @@ const main = require('../../index');
 const help = ({  message, params = [], prefix }) => {
     const embed = new MessageEmbed().setColor('DARK_NAVY');
     switch(params[0]) {
-        case 'destiny':
-        case 'd':
-            embed.setTitle('**Destiny Pool Help**')
-                 .addField(`${prefix}destiny`, 'View the destiny pool.')
-                 .addField(`${prefix}destiny roll`, `Rolls a force die and adds result to the destiny pool.`)
-                 .addField(`${prefix}destiny l/light`, `Use light side point.`)
-                 .addField(`${prefix}destiny d/dark`, `Use dark side point.`)
-                 .addField(`${prefix}destiny set #l #d`, `Sets destiny pool.`)
-                 .addField(`${prefix}destiny set lldd`, `Sets destiny pool`)
-                 .addField(`${prefix}destiny reset`, `Resets the destiny pool`);
-            break;
-        case 'story':
-        case 's':
-            embed.setTitle('**Story Pool Help**')
-                 .addField(`${prefix}story`, 'View the story pool.')
-                 .addField(`${prefix}story roll`, 'Rolls a white die and adds result to the story points.')
-                 .addField(`${prefix}story p/player`, 'Uses player point.')
-                 .addField(`${prefix}story g/gm`, 'Uses GM point.')
-                 .addField(`${prefix}story set #p #g`, 'Sets story points.')
-                 .addField(`${prefix}story set ppgg`, 'Sets story points.')
-                 .addField(`${prefix}story reset`, 'Resets the story pool.');
-            break;
         case 'character':
         case 'char':
         case 'c':
@@ -72,19 +50,6 @@ const help = ({  message, params = [], prefix }) => {
                      `\`\`\`${prefix}roll yyyggbbd\`\`\` (must use single character identifiers)
     				\`\`\`${prefix}roll 1g 1p 1adv\`\`\` (must specify a number before each identifier)`);
             break;
-        case 'initiative':
-        case 'init':
-        case 'i':
-            embed.setTitle('**Initiative Help**')
-                 .addField(`${prefix}init`, 'Shows current initiative order.')
-                 .addField(`${prefix}init roll diceIdentifiers npc/pc`, 'Rolls your initiative dice and adds character to the order')
-                 .addField(`${prefix}init next`, 'Moves to next initiative slot.')
-                 .addField(`${prefix}init previous`, 'Moves to previous initiative slot.')
-                 .addField(`${prefix}init set`, 'Manually set initiative order before any turns occur.')
-                 .addField(`${prefix}init modify`, 'Manually alter initiative order mid-round.')
-                 .addField(`${prefix}init reset`, 'Resets the initiative order.')
-                 .addField(`${prefix}init remove #`, 'Removes slot# from initiative.');
-            break;
         case 'reroll':
         case 'rr':
             embed.setTitle('**ReRoll Help**')
@@ -112,19 +77,6 @@ const help = ({  message, params = [], prefix }) => {
                  .addField(`Examples`, `\`\`\`${prefix}prefix ^, prefix & \`\`\``)
                  .addField(`NOTE`, `User needs to have a higher role than the bot. See more [here](https://support.discordapp.com/hc/en-us/articles/214836687-Role-Management-101)`);
             break;
-        case 'crit':
-        case 'shipcrit':
-            embed.setTitle('**Critical Help**')
-                 .addField(`${prefix}crit and ${prefix}shipcrit`, 'Rolls a d100 and matches the roll to the appropriate critical injury table then prints the result.')
-                 .addField(`${prefix}crit +10`, 'Automatically add 10 to the roll (any number can be used).')
-                 .addField(`${prefix}crit -10`, 'Automatically subtract 10 to the roll (any number can be used).')
-                 .addField(`${prefix}crit 54?`, 'Look up critical by number (any number can be used).');
-            break;
-        case 'duty':
-        case 'obligation':
-            embed.setTitle(`**${upperFirst(topic)} Help**`)
-                 .addField(`${prefix}${upperFirst(topic)}`, `Gathers all ${topic} from ${prefix}Char and rolls a d100 to trigger ${topic}.`);
-            break;
         default:
             embed.setTitle('**Help Contents**')
                  .setDescription(`'${prefix}Help [topic]' for further information.`)
@@ -138,14 +90,7 @@ const help = ({  message, params = [], prefix }) => {
                  .addField(`${prefix}help`, 'displays help for topics.')
                  .addField(`${prefix}roll`, 'rolls any combination of SWRPG/GENESYS dice.')
                  .addField(`${prefix}reroll`, 'modifies the previous roll.')
-                 .addField(`${prefix}destiny`, 'manages the destiny balance.')
-                 .addField(`${prefix}crit`, 'rolls and displays the critical hit.')
-                 .addField(`${prefix}shipcrit`, 'rolls and displays the ship critical hit.')
                  .addField(`${prefix}char`, 'simple character stat manager.')
-                 .addField(`${prefix}init`, 'initiative tracker and roller.')
-                 .addField(`${prefix}obligation`, `gathers all the obligations entered with ${prefix}char and rolls to trigger.`)
-                 .addField(`${prefix}duty`, `gathers all the duty entered with ${prefix}char and rolls to trigger.`)
-                 .addField(`${prefix}species/${prefix}gleepglop`, 'picks a random species.')
                  .addField('Bot Information', 'For more information or help join the [SkyJedi\'s Bot Emporium](https://discord.gg/G8au6FH)')
                  .addField('Role playing games by Fantasy Flight Games', `[Edge of the Empire](https://www.fantasyflightgames.com/en/products/star-wars-edge-of-the-empire), [Force and Destiny](https://www.fantasyflightgames.com/en/products/star-wars-force-and-destiny), [Age of Rebellion](https://www.fantasyflightgames.com/en/products/star-wars-age-ofrebellion),[Genesys](https://www.fantasyflightgames.com/en/products/genesys), [Legends of the Five Rings](https://www.fantasyflightgames.com/en/legend-of-the-five-rings-roleplaying-game)`);
             break;
