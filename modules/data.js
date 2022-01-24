@@ -1,5 +1,5 @@
 const { db } = require('../firestore');
-const { prefix } = require('../config.json');
+const { prefix } = require('../config/config.json');
 
 const readData = async (client, message, dataSet) => {
     let dbRef = getDbRef(client, message, dataSet);

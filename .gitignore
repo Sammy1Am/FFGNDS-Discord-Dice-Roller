@@ -1,4 +1,3 @@
-/config.json
 node_modules/
 .DS_Store
 data/*
@@ -6,3 +5,4 @@ data/*
 emoji.json
 package-lock.json
 d1-firestore.json
+config.json

@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const { toLower } = require('lodash');
 const { version } = require('./package.json');
-const config = require('./config');
+const config = require('./config/config');
 const { buildPrefix, buildParams, buildCommand, buildDescriptor } = require('./modules/functions');
 const { readData, writeData } = require('./modules/data');
 const modules = require('./modules/');

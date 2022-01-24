@@ -1,4 +1,4 @@
-const config = require('../../config.json');
+const config = require('../../config/config.json');
 const emoji = require('../').emoji;
 const { writeData, readData } = require('../data');
 const dice = ['white', 'black', 'success', 'opportunity', 'strife', 'explosiveSuccess'];

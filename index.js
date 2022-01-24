@@ -3,7 +3,7 @@
   For Custom Discord Bots please email me at Astrydax@gmail.com
 */
 const { Client, Options } = require('discord.js');
-const { Patreon, token, babyBotToken } = require('./config');
+const { Patreon, token, babyBotToken } = require('./config/config');
 const axios = require('axios');
 const handlers = require('./handlers');
 

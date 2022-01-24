@@ -1,4 +1,4 @@
-const config = require('../config.json');
+const config = require('../config/config.json');
 const { random, toLower } = require('lodash');
 const { readData } = require('./data');
 const main = require('../index');
