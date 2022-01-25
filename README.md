@@ -5,7 +5,7 @@ A Discord Bot Companion for the Star Wars : Edge of the Empire (SW:EotE), Age of
 
 ## Usage
 
-- `!swrpg`, `!genesys`, `!l5r`  switches dice and functionality between games.
+- `!swrpg`, `!genesys`, `!l5r`, `!swia`  switches dice and functionality between games.
 
 ## Star Wars (SW)/Genesys commands
 
@@ -144,7 +144,15 @@ Note: if you use the `!roll yyyggbbd` method you must use the single character d
 [Fantasy Flight Games, Genesys](https://www.fantasyflightgames.com/en/products/genesys)
 
 
+# Docker Setup
+Build and run the Dockerimage file.  You'll need to mount your config directory to `/usr/src/app/config` to store `config.json`, `d1-firebase.json`, and `emoji.json`.
+
+`config.json` - Contains Firebase and Discord configuration and tokens (see example file).
+`d1-firebase.json` - Auth for Firebase service user
+`emoji.json` - Can be an empty JSON file "`{}`", but needs to exist before launching.
+
 # Installation and Setup
+(This is a bit out of date, but hopefully close enough to get you going)
 
 1. First you will need to have NodeJS installed on your machine. You can find the latest version [here](https://nodejs.org/en/)
 2. Next create a discord account for your bot. You can do this [here](https://discordapp.com/developers/applications/me)
@@ -182,3 +190,7 @@ Note: if you use the `!roll yyyggbbd` method you must use the single character d
 12. Save file
 13. upload custom emoji from emoji folder to the server.  https://support.discordapp.com/hc/en-us/articles/207619737-Adding-Emoji-Magic
 13. Your bot is now configured and ready to launch.
+
+# Usage Notes
+- After running `!build`, you will need to re-set the game you intend to use (e.g. `!swia`).
+- The configuration seems to largely assume that each game-type has its own Discord server somewhere to host the dice emoji (since there are a lot of overlapping dice-emoji names between games).  As long as you're only using one game-type, just upload the emoji for that game (other game types will fail to roll).
